@@ -7,12 +7,14 @@ public class Student {
     private String lastName;
     private int age;
     private double meanGrade;
+    private Boolean scholarshipEligible;
 
-    public Student(String firstName, String lastName, int age, double meanGrade) {
+    public Student(String firstName, String lastName, int age, double meanGrade, Boolean scholarshipEligible) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
         this.meanGrade = meanGrade;
+        this.scholarshipEligible = scholarshipEligible;
     }
 
     @Override
@@ -22,6 +24,7 @@ public class Student {
                 ", lastName='" + lastName + '\'' +
                 ", age=" + age +
                 ", meanGrade=" + meanGrade +
+                ", scholarshipEligible=" + scholarshipEligible +
                 '}';
     }
 
@@ -33,12 +36,13 @@ public class Student {
         return age == student.age &&
                 Double.compare(student.meanGrade, meanGrade) == 0 &&
                 Objects.equals(firstName, student.firstName) &&
-                Objects.equals(lastName, student.lastName);
+                Objects.equals(lastName, student.lastName) &&
+                Objects.equals(scholarshipEligible, student.scholarshipEligible);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(firstName, lastName, age, meanGrade);
+        return Objects.hash(firstName, lastName, age, meanGrade, scholarshipEligible);
     }
 
     public String getFirstName() {
@@ -71,5 +75,13 @@ public class Student {
 
     public void setMeanGrade(double meanGrade) {
         this.meanGrade = meanGrade;
+    }
+
+    public Boolean getScholarshipEligible() {
+        return scholarshipEligible;
+    }
+
+    public void setScholarshipEligible(Boolean scholarshipEligible) {
+        this.scholarshipEligible = scholarshipEligible;
     }
 }
