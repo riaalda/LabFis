@@ -22,12 +22,12 @@ public class ViewStudentsController {
     @FXML
     public TableColumn<Student, Double> studentMeanGradeColumn;
     private ObservableList<Student> students = FXCollections.observableArrayList(
-            new Student("John", "Doe", 20, 8.73),
-            new Student("Jane", "Does", 23, 9.35),
-            new Student("Jack", "Black", 19, 6.58),
-            new Student("Julia", "Nice", 21, 9.85),
-            new Student("Johnny", "Jackson", 24, 9.97),
-            new Student("Michelle", "Roberts", 22, 7.65)
+            new Student("John", "Doe", 20, 8.73, Boolean.TRUE),
+            new Student("Jane", "Does", 23, 9.35, Boolean.TRUE),
+            new Student("Jack", "Black", 19, 6.58, Boolean.FALSE),
+            new Student("Julia", "Nice", 21, 9.85, Boolean.FALSE),
+            new Student("Johnny", "Jackson", 24, 9.97, Boolean.TRUE),
+            new Student("Michelle", "Roberts", 22, 7.65, Boolean.TRUE)
     );
 
     @FXML
